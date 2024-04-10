@@ -50,6 +50,7 @@ export default async function Home() {
 
 async function CrudShowcase() {
   const latestPost = await api.post.getLatest();
+  const allPost = await api.post.getAll();
 
   return (
     <div className="w-full max-w-xs">
@@ -60,6 +61,11 @@ async function CrudShowcase() {
       )}
 
       <CreatePost />
+      <div>
+        {allPost.map((post) => (
+          <p>{post.name}</p>
+        ))}
+      </div>
     </div>
   );
 }
