@@ -63,7 +63,7 @@ async function CrudShowcase() {
       <CreatePost />
       <div>
         {allPost.map((post) => (
-          <p>{post.name}</p>
+          <p key={post.id}>{post.name}</p>
         ))}
       </div>
     </div>
